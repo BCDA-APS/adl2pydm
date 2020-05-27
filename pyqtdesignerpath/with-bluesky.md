@@ -1,12 +1,12 @@
 # pydm installed with bluesky
 
-Noticing that *designer* is not working with (at least one of) my 
+Noticing that *designer* is not working with (at least one of) my
 *bluesky* installations, I want to identify why.
 
 ## Environment variables
 
 Per the revised [installation notes](install-pydm.md), designer
-works (*works* means: finds the PyDM widget plugins) 
+works (*works* means: finds the PyDM widget plugins)
 when *pydm* is installed in a custom conda environment.
 
 In my typical *bluesky* environment, designer does not find the plugins.
@@ -19,7 +19,7 @@ For the *bluesky* environment, `PATH` has an extra (and unnecessary)
 `/home/mintadmin/Apps/anaconda/bin` as the second item, but removing this
 from `PATH` has no effect.
 
-It's not obvious why, when using the *bluesky* environment, the designer 
+It's not obvious why, when using the *bluesky* environment, the designer
 does not find the PyDM widget plugins.  However, examination of the environment
 variables does not reveal the reason.
 
@@ -42,7 +42,7 @@ numbers such that they are not compared directly.
 
 Easier to set up a *new* conda environment
 with the packages we want than to decide what are the
-important differences between the existing bluesky and 
+important differences between the existing bluesky and
 pydm-only environments (the `diff` command).
 
 Here are bash commands to make the new environment.
@@ -74,8 +74,8 @@ designer /tmp/uptime.ui
 pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /tmp/uptime.ui
 ```
 
-Note: the file `uptime.ui` has a single 
-[PyDMLabel](https://slaclab.github.io/pydm/widgets/label.html) 
-widget that displays the value of `xxx:UPTIME`.  
+Note: the file `uptime.ui` has a single
+[PyDMLabel](https://slaclab.github.io/pydm/widgets/label.html)
+widget that displays the value of `xxx:UPTIME`.
 Create this file for yourself
 with *designer* and use any PV of your choice.

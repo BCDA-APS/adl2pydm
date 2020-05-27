@@ -4,9 +4,9 @@
 read the MEDM .adl file into Python data structures
 
 Parse the file by blocks.
-Only rely on packages in the standard Python distribution. 
+Only rely on packages in the standard Python distribution.
 
-MEDM's .adl files are divided into a list of blocks where 
+MEDM's .adl files are divided into a list of blocks where
 each block is structured thus::
 
     symbol {
@@ -19,15 +19,15 @@ symbol.
 
 The *contents* are a list of block(s) and assignment(s) or values.
 An *assignment* is structured:  ``symbol=value``
-A *value* is a number, text surrounded by double quotes, 
+A *value* is a number, text surrounded by double quotes,
 or a list of values surrounded by parentheses.
 
-Three special blocks come at the start of the MEDM file: 
-file, display, and "color map".  The remaining blocks at 
-the main screen level (0) correspond to GUI widgets or, in the case of 
+Three special blocks come at the start of the MEDM file:
+file, display, and "color map".  The remaining blocks at
+the main screen level (0) correspond to GUI widgets or, in the case of
 *composite*, a list of widgets that are grouped.
 
-Other blocks are used to provide configuration for their 
+Other blocks are used to provide configuration for their
 parent GUI widget.
 """
 
@@ -95,20 +95,20 @@ def adl_to_deg(deg):
 
 class Block(object):
     """ADL file block structure"""
-    
+
     def __init__(self, start, end, level, symbol):
         self.start = start
         self.end = end
         self.level = level
         self.symbol = symbol
-    
+
     def __str__(self):
         fmt = "Block: %d:%d:%d %s"
         return fmt % (self.level, self.start, self.end, str(self.symbol))
 
 
 class MedmBaseWidget(object):
-    
+
     def __init__(self):
         self.background_color = None
         self.color = None
@@ -142,7 +142,7 @@ class MedmBaseWidget(object):
             "valuator" : MedmValuatorWidget,
             "wheel switch" : MedmWheelSwitchWidget,
             }
-    
+
     def __str__(self):
         fmt = "Widget(%s)"
         args = []
@@ -152,7 +152,7 @@ class MedmBaseWidget(object):
             args.append("symbol=\"%s\"" % str(self.symbol))
         args.append("line=%d" % self.line_offset)
         return fmt % ", ".join(args)
-    
+
     def getNamedBlock(self, block_name, blocks):
         """
         """
@@ -179,7 +179,7 @@ class MedmBaseWidget(object):
                 # TODO: look for parentheses
                 assignments[key] = value
         return assignments
-    
+
     def locateBlocks(self, buf):
         """
         identify and record the start and end of all blocks at this nesting level in the buffer
@@ -199,7 +199,7 @@ class MedmBaseWidget(object):
                     block.end = line
                     blocks.append(block)
         return blocks
-    
+
     def parseAdlBuffer(self, buf):              # lgtm [py/similar-function]
         """generic handling, override as needed"""
         assignments = self.locateAssignments(buf)
@@ -207,18 +207,18 @@ class MedmBaseWidget(object):
 
         # assign certain items in named attributes
         assignments = self.parseColorAssignments(assignments)
-            
+
         # all widget blocks have an "object"
         block = self.getNamedBlock("object", blocks)
         if block is not None:
             self.geometry = self.parseObjectBlock(buf[block.start+1:block.end])
-            
+
             # remove that block
             for i, b in enumerate(blocks):
                 if b.symbol == "object":
                     break
             del blocks[i]
-        
+
         reservedLabels = "channel limits outline none".split()
         reservedLabels.append("no decorations")
         label = assignments.get("label")
@@ -261,7 +261,7 @@ class MedmBaseWidget(object):
                 del self.contents["points"]
 
         return assignments, blocks
-    
+
     def parseChildren(self, main, blocks, buf):
         for block in blocks:
             if block.symbol in symbols.adl_widgets:
@@ -270,7 +270,7 @@ class MedmBaseWidget(object):
                 widget = handler(self.line_offset+block.start, main, block.symbol)
                 widget.parseAdlBuffer(buf[block.start+1:block.end])
                 self.widgets.append(widget)
-    
+
     def parseColorAssignments(self, assignments):
         # assign certain items in named attributes
         xref = dict(clr="color", bclr="background_color")
@@ -288,7 +288,7 @@ class MedmBaseWidget(object):
                     # FIXME: caServerApp/test.adl fails here with IndexError
                 del assignments[k]
         return assignments
-    
+
     def parseObjectBlock(self, buf):
         """MEDM "object" block defines a Geometry for its parent"""
         a = self.locateAssignments(buf)
@@ -317,7 +317,7 @@ class MedmBaseWidget(object):
 
 
 class MedmMainWidget(MedmBaseWidget):
-    
+
     def __init__(self, given_filename=None):
         MedmBaseWidget.__init__(self)
         self.given_filename = given_filename    # file name as provided
@@ -326,7 +326,7 @@ class MedmMainWidget(MedmBaseWidget):
         self.color_table = []           # TODO: supply a default color table
         self.widgets = []
         self.line_offset = 1            # line numbers start at 1
-    
+
     def getAdlLines(self, fname=None):
         fname = fname or self.given_filename
         if not os.path.exists(fname):
@@ -342,7 +342,7 @@ class MedmMainWidget(MedmBaseWidget):
         blocks = self.locateBlocks(buf)
         for block in blocks:
             logger.debug(str(block))
-        
+
         xref = OrderedDict([
             ("file", self.parseFileBlock),
             ("color map", self.parseColorMapBlock), # must BEFORE display
@@ -355,15 +355,15 @@ class MedmMainWidget(MedmBaseWidget):
             else:
                 logger.debug("Processing %s block" % symbol)
                 handler(buf[block.start+1:block.end])
-         
+
         # sift out the three block types already handled
         blocks = [
-            block 
-            for block in blocks 
+            block
+            for block in blocks
             if block.symbol in symbols.adl_widgets
             ]
         self.parseChildren(self, blocks, buf)
-    
+
     def parseFileBlock(self, buf):
         # TODO: keep original line numbers for debug purposes
         xref = dict(name="adl_filename", version="adl_version")
@@ -372,7 +372,7 @@ class MedmMainWidget(MedmBaseWidget):
             value = assignments.get(k)
             if value is not None:
                 self.__setattr__(sk, value)
-    
+
     def parseColorMapBlock(self, buf):
         """read the color_table (clut) from the "color map"""
         # TODO: keep original line numbers for debug purposes
@@ -402,7 +402,7 @@ class MedmMainWidget(MedmBaseWidget):
                     color = Color(*list(arr))   # ignore inten (default = 255)
                     clut.append(color)
                 self.color_table = clut
-    
+
     def parseDisplayBlock(self, buf):
         # TODO: keep original line numbers for debug purposes
         assignments = self.locateAssignments(buf)
@@ -422,9 +422,9 @@ class MedmMainWidget(MedmBaseWidget):
 
 
 class MedmGenericWidget(MedmBaseWidget):
-    
+
     debug = False
-    
+
     def __init__(self, line, main, symbol):
         MedmBaseWidget.__init__(self)
         self.line_offset = line
@@ -443,11 +443,11 @@ class MedmByteWidget(MedmGenericWidget): pass
 
 
 class MedmCartesianPlotWidget(MedmGenericWidget):
-    
+
     def __init__(self, line, main, symbol):
         MedmGenericWidget.__init__(self, line, main, symbol)
 
-    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function] 
+    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function]
         assignments, blocks = MedmBaseWidget.parseAdlBuffer(self, buf)
 
         self.parsePlotcomBlock(buf, blocks)
@@ -469,7 +469,7 @@ class MedmCartesianPlotWidget(MedmGenericWidget):
                     aa["color"] = self.main.color_table[int(clr)]
                 row = block.symbol.replace("[", " ").replace("]", "").split()[-1]
                 traces[row] = aa
-        
+
         def sorter(value):
             return int(value)
         self.contents["traces"] = [traces[k] for k in sorted(traces.keys(), key=sorter)]
@@ -480,7 +480,7 @@ class MedmChoiceButtonWidget(MedmGenericWidget): pass
 
 class MedmCompositeWidget(MedmBaseWidget):
     """contains other widgets or an entire .adl screen"""
-    
+
     def __init__(self, line, main, symbol):
         MedmBaseWidget.__init__(self)
         self.line_offset = line
@@ -490,7 +490,7 @@ class MedmCompositeWidget(MedmBaseWidget):
 
     def parseAdlBuffer(self, buf):              # lgtm [py/similar-function]
         assignments, blocks = MedmBaseWidget.parseAdlBuffer(self, buf)
-        
+
         block = self.getNamedBlock("children", blocks)
         if block is not None:
             # aa = self.locateAssignments(buf[block.start+1:block.end])
@@ -498,7 +498,7 @@ class MedmCompositeWidget(MedmBaseWidget):
             self.parseChildren(self.main, bb, buf[block.start+1:block.end])
 
 
-class MedmEmbeddedDisplayWidget(MedmGenericWidget): 
+class MedmEmbeddedDisplayWidget(MedmGenericWidget):
     debug = True # TODO: need example in .adl file!
 
     def __init__(self, line, main, symbol):
@@ -508,7 +508,7 @@ class MedmEmbeddedDisplayWidget(MedmGenericWidget):
 
             file: %s
             line: %d
-            
+
             Please submit this file to the GitHub issue tracker
             (https://github.com/BCDA-APS/adl2pydm/issues/new)
             or email it to the author: <jemian@anl.gov>.
@@ -529,12 +529,12 @@ class MedmRectangleWidget(MedmGenericWidget): pass
 
 
 class MedmRelatedDisplayWidget(MedmGenericWidget):
-    
+
     def __init__(self, line, main, symbol):
         MedmGenericWidget.__init__(self, line, main, symbol)
         self.displays = []
 
-    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function] 
+    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function]
         assignments, blocks = MedmBaseWidget.parseAdlBuffer(self, buf)
 
         displays = {}
@@ -545,19 +545,19 @@ class MedmRelatedDisplayWidget(MedmGenericWidget):
             aa = self.locateAssignments(buf[block.start+1:block.end])
             row = block.symbol.replace("[", " ").replace("]", "").split()[-1]
             displays[row] = aa
-        
+
         def sorter(value):
             return int(value)
         self.displays = [displays[k] for k in sorted(displays.keys(), key=sorter)]
 
 
 class MedmShellCommandWidget(MedmGenericWidget):
-    
+
     def __init__(self, line, main, symbol):
         MedmGenericWidget.__init__(self, line, main, symbol)
         self.commands = []
 
-    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function] 
+    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function]
         assignments, blocks = MedmBaseWidget.parseAdlBuffer(self, buf)
 
         commands = {}
@@ -568,18 +568,18 @@ class MedmShellCommandWidget(MedmGenericWidget):
             aa = self.locateAssignments(buf[block.start+1:block.end])
             row = block.symbol.replace("[", " ").replace("]", "").split()[-1]
             commands[row] = aa
-        
+
         def sorter(value):
             return int(value)
         self.commands = [commands[k] for k in sorted(commands.keys(), key=sorter)]
 
 
 class MedmStripChartWidget(MedmGenericWidget):
-    
+
     def __init__(self, line, main, symbol):
         MedmGenericWidget.__init__(self, line, main, symbol)
 
-    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function] 
+    def parseAdlBuffer(self, buf):          # lgtm [py/similar-function]
         assignments, blocks = MedmBaseWidget.parseAdlBuffer(self, buf)
 
         pens = {}
@@ -599,7 +599,7 @@ class MedmStripChartWidget(MedmGenericWidget):
             #     raise ValueError(block.symbol + " not handled yet")
             else:
                 raise ValueError(block.symbol + " not expected here")
-        
+
         def sorter(value):
             return int(value)
         self.contents["pens"] = [pens[k] for k in sorted(pens.keys(), key=sorter)]

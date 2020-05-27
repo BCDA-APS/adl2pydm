@@ -99,7 +99,7 @@
     		clr=2
     	}
     }
-    
+
 		text {
 			object {
 				x=0
@@ -126,7 +126,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -151,7 +151,7 @@
     	textix="  ExposureAutoControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -199,7 +199,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -245,7 +245,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -293,7 +293,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -341,7 +341,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -389,7 +389,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -437,7 +437,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -498,7 +498,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -523,7 +523,7 @@
     	textix="  GainControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -569,7 +569,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -617,7 +617,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -676,7 +676,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -701,7 +701,7 @@
     	textix="  GainAutoControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -749,7 +749,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -797,7 +797,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -845,7 +845,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -893,7 +893,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -941,7 +941,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1002,7 +1002,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -1027,7 +1027,7 @@
     	textix="  BlackLevelControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1073,7 +1073,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1134,7 +1134,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -1159,7 +1159,7 @@
     	textix="  Whitebalance"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1205,7 +1205,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1253,7 +1253,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1312,7 +1312,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -1337,7 +1337,7 @@
     	textix="  BalanceWhiteAutoControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1385,7 +1385,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1446,7 +1446,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1471,7 +1471,7 @@
     	textix="  Iris"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1517,7 +1517,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1565,7 +1565,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1613,7 +1613,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1661,7 +1661,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1722,7 +1722,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1747,7 +1747,7 @@
     	textix="  DefectMask"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1793,7 +1793,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1852,7 +1852,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1877,7 +1877,7 @@
     	textix="  SubstrateVoltage"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1938,7 +1938,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1963,7 +1963,7 @@
     	textix="  ColorTransformationControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2009,7 +2009,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2055,7 +2055,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2101,7 +2101,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2162,7 +2162,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -2187,7 +2187,7 @@
     	textix="  LUTControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2233,7 +2233,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2279,7 +2279,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2325,7 +2325,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2373,7 +2373,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2421,7 +2421,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2452,7 +2452,7 @@
     	label="LUTLoad"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2483,7 +2483,7 @@
     	label="LUTSave"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2527,7 +2527,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -2552,7 +2552,7 @@
     	textix="  LUTInfo"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2600,7 +2600,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2648,7 +2648,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2696,7 +2696,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2757,7 +2757,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -2782,7 +2782,7 @@
     	textix="  SyncIn"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2830,7 +2830,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2876,7 +2876,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2937,7 +2937,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -2962,7 +2962,7 @@
     	textix="  SyncOut"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3010,7 +3010,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3056,7 +3056,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3102,7 +3102,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3161,7 +3161,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -3186,7 +3186,7 @@
     	textix="  Strobe"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3232,7 +3232,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3278,7 +3278,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3326,7 +3326,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3387,7 +3387,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -3412,7 +3412,7 @@
     	textix="  EventControl"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3458,7 +3458,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3504,7 +3504,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3552,4 +3552,3 @@
 			limits {
 			}
 		}
-    

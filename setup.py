@@ -33,7 +33,7 @@ setup(
     #platforms        = package.__platforms__,
     package_dir      = {'': 'src'},
     packages         = find_namespace_packages(
-                        "src", 
+                        "src",
                         exclude=package.__exclude_project_dirs__),
     url              = package.__url__,
     python_requires  = package.__python_version_required__,

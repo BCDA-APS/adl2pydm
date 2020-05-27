@@ -50,18 +50,18 @@ class Test_Files(unittest.TestCase):
     def setUp(self):
         self.path = os.path.dirname(__file__)
         self.medm_path = os.path.join(self.path, "medm")
-    
+
     # def tearDown(self):
     #     pass
 
     def parseFile(self, short_name):
         full_name = os.path.join(self.medm_path, short_name)
-        
+
         screen = adl_parser.MedmMainWidget()
         buf = screen.getAdlLines(full_name)
         screen.parseAdlBuffer(buf)
         return screen
-    
+
     def assertEqualColor(self, color, r=None, g=None, b=None):
         if color is None:
             self.assertIsNone(r)
@@ -97,7 +97,7 @@ class Test_Files(unittest.TestCase):
 
     def assertHasAttribute(self, parent, attr_name):
         self.assertTrue(hasattr(parent, attr_name))
-    
+
     def pickWidget(self, parent, num_widgets, n, symbol, line_offset):
         self.assertHasAttribute(parent, "widgets")
         self.assertEqual(len(parent.widgets), num_widgets)
@@ -107,7 +107,7 @@ class Test_Files(unittest.TestCase):
         return w
 
     # -------------------------------------------------
-    
+
     def test__paths(self):
         self.assertTrue(os.path.exists(self.path))
         self.assertTrue(os.path.exists(self.medm_path))
@@ -199,7 +199,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_bar(self):
         screen = self.parseFile("mca-R7-7-mca.adl")
         w = self.pickWidget(screen, 86, 84, "bar", 1779)
-        
+
         self.assertEqualGeometry(w, 6, 217, 60, 16)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 255, 255, 255)
@@ -217,7 +217,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_byte(self):
         screen = self.parseFile("optics-R2-13-1-pf4more.adl")
         w = self.pickWidget(screen, 79, 41, "byte", 754)
-        
+
         self.assertEqualGeometry(w, 166, 224, 10, 336)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 139, 26, 150)
@@ -260,7 +260,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_cartesian_plot(self):
         screen = self.parseFile("beamHistory_full-R3-5.adl")
         w = self.pickWidget(screen, 47, 13, "cartesian plot", 551)
-        
+
         self.assertEqualGeometry(w, 11, 281, 480, 200)
         self.assertEqualTitle(w, "")
         self.assertEqualColor(w.color, 10, 0, 184)
@@ -326,7 +326,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_choice_button(self):
         screen = self.parseFile("motorx-R6-10-1.adl")
         w = self.pickWidget(screen, 31, 30, "choice button", 568)
-        
+
         self.assertEqualGeometry(w, 45, 137, 71, 20)
         self.assertEqualTitle(w, None)
 
@@ -342,7 +342,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_composite(self):
         screen = self.parseFile("ADBase-R3-3-1.adl")
         w = self.pickWidget(screen, 10, 1, "composite", 101)
-        
+
         self.assertEqualGeometry(w, 6, 35, 350, 340)
         self.assertEqualColor(w.color, None)
         self.assertEqualColor(w.background_color, None)
@@ -357,7 +357,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_image(self):
         screen = self.parseFile("sampleWheel.adl")
         w = self.pickWidget(screen, 197, 1, "image", 101)
-        
+
         self.assertEqualGeometry(w, 0, 20, 500, 500)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, None)
@@ -372,7 +372,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_indicator(self):
         screen = self.parseFile("optics-R2-13-1-CoarseFineMotorShow.adl")
         w = self.pickWidget(screen, 12, 5, "indicator", 156)
-        
+
         self.assertEqualGeometry(w, 178, 52, 250, 25)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -392,7 +392,7 @@ class Test_Files(unittest.TestCase):
         screen = self.parseFile("motorx_all-R6-10-1.adl")
         w = self.pickWidget(screen, 175, 23, "composite", 417)
         w = self.pickWidget(w, 2, 0, "menu", 417)
-        
+
         self.assertEqualGeometry(w, 186, 232, 100, 18)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -410,7 +410,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_message_button(self):
         screen = self.parseFile("std-R3-5-ID_ctrl.adl")
         w = self.pickWidget(screen, 25, 3, "message button", 434)
-        
+
         self.assertEqualGeometry(w, 150, 220, 140, 40)
         self.assertEqualTitle(w, "Stop ")
         self.assertEqualColor(w.color, 253, 0, 0)
@@ -431,7 +431,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_meter(self):
         screen = self.parseFile("calc-R3-7-userCalcMeter.adl")
         w = self.pickWidget(screen, 6, 0, "meter", 87)
-        
+
         self.assertEqualGeometry(w, 0, 38, 200, 150)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -447,7 +447,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_oval(self):
         screen = self.parseFile("motorx_all-R6-10-1.adl")
         w = self.pickWidget(screen, 175, 60, "oval", 993)
-        
+
         self.assertEqualGeometry(w, 290, 132, 21, 21)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 253, 0, 0)
@@ -470,7 +470,7 @@ class Test_Files(unittest.TestCase):
         screen = self.parseFile("calc-R3-7-1-FuncGen_full.adl")
         w = self.pickWidget(screen, 38, 18, "composite", 337)
         w = self.pickWidget(w, 2, 1, "polygon", 353)
-        
+
         self.assertEqualGeometry(w, 260, 174, 10, 10)
         self.assertEqualTitle(w, None)
 
@@ -492,7 +492,7 @@ class Test_Files(unittest.TestCase):
         screen = self.parseFile("calc-R3-7-1-FuncGen_full.adl")
         w = self.pickWidget(screen, 38, 18, "composite", 337)
         w = self.pickWidget(w, 2, 0, "polyline", 337)
-        
+
         self.assertEqualGeometry(w, 120, 178, 142, 2)
         self.assertEqualTitle(w, None)
 
@@ -512,7 +512,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_rectangle(self):
         screen = self.parseFile("ADBase-R3-3-1.adl")
         w = self.pickWidget(screen, 10, 0, "rectangle", 90)
-        
+
         self.assertEqualGeometry(w, 0, 4, 715, 25)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 218, 218, 218)
@@ -527,7 +527,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_related_display(self):
         screen = self.parseFile("std-R3-5-ID_ctrl.adl")
         w = self.pickWidget(screen, 25, 13, "related display", 611)
-        
+
         self.assertEqualGeometry(w, 119, 285, 18, 18)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 88, 52, 15)
@@ -544,7 +544,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_shell_command(self):
         screen = self.parseFile("sscan-R2-11-1-scanAux.adl")
         w = self.pickWidget(screen, 66, 42, "shell command", 725)
-        
+
         self.assertEqualGeometry(w, 350, 239, 20, 20)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -568,7 +568,7 @@ class Test_Files(unittest.TestCase):
         # this widget is in a composite
         w = self.pickWidget(screen, 38, 32, "composite", 614)
         w = self.pickWidget(w, 1, 0, "strip chart", 614)
-        
+
         self.assertEqualGeometry(w, 0, 260, 450, 170)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -590,7 +590,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_text(self):
         screen = self.parseFile("ADBase-R3-3-1.adl")
         w = self.pickWidget(screen, 10, 9, "text", 181)
-        
+
         self.assertEqualGeometry(w, 0, 5, 715, 25)
         self.assertEqualTitle(w, "Area Detector Control - $(P)$(R)")
         self.assertEqualColor(w.color, 10, 0, 184)
@@ -606,7 +606,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_text_entry(self):
         screen = self.parseFile("std-R3-5-ID_ctrl.adl")
         w = self.pickWidget(screen, 25, 8, "text entry", 531)
-        
+
         self.assertEqualGeometry(w, 54, 114, 120, 38)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 255, 255, 255)
@@ -626,7 +626,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_text_update(self):
         screen = self.parseFile("text_examples.adl")
         w = self.pickWidget(screen, 17, 0, "text update", 90)
-        
+
         self.assertEqualGeometry(w, 10, 46, 140, 24)
         self.assertEqualTitle(w, None)
         self.assertEqualColor(w.color, 0, 0, 0)
@@ -645,7 +645,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_valuator(self):
         screen = self.parseFile("optics-R2-13-xiahsc.adl")
         w = self.pickWidget(screen, 55, 8, "valuator", 201)
-        
+
         self.assertEqualGeometry(w, 52, 247, 100, 20)
         self.assertIsInstance(w.contents, dict)
         self.assertEqual(len(w.contents), 3)
@@ -659,7 +659,7 @@ class Test_Files(unittest.TestCase):
     def test_parse_medm_widget_wheel_switch(self):
         screen = self.parseFile("wheel_switch.adl")
         w = self.pickWidget(screen, 1, 0, "wheel switch", 90)
-        
+
         self.assertEqualGeometry(w, 19, 16, 185, 91)
         self.assertEqualTitle(w, None)
         self.assertIsInstance(w.contents, dict)

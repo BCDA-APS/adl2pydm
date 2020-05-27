@@ -76,7 +76,7 @@ As before, test that designer finds the plugins when it starts.
 
 ## Full conda installation
 
-Since the documentation was written, there is now a 
+Since the documentation was written, there is now a
 [pydm](https://anaconda.org/conda-forge/pydm)
 pre-built package for installation with conda.
 (This package is built as `noarch` which means it is not dependent
@@ -94,7 +94,7 @@ conda install -y pydm -c conda-forge
 ```
 
 Again, check that designer finds the plugins.  (We do not need to define
-`PYQTDESIGNERPATH` everry time we activate the environment.  
+`PYQTDESIGNERPATH` everry time we activate the environment.
 It will be set for us *as* conda activates the environment.)
 This time, the text `Loading PyDM Widgets` is not printed but
 the designer still shows controls for the PyDM widgets.
@@ -103,8 +103,8 @@ the designer still shows controls for the PyDM widgets.
 
 The previous conda instructions installed pydm 1.6.2.
 The current release on [conda-forge](https://anaconda.org/search?q=pydm)
-is 1.7.3.  Also, the installations above all used python=3.6, 
-yet the current python is now 3.7. 
+is 1.7.3.  Also, the installations above all used python=3.6,
+yet the current python is now 3.7.
 
 ```
 conda create -y -n pydm-environment python pydm -c conda-forge

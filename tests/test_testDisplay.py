@@ -25,7 +25,7 @@ class Test_ADL_Conversion(unittest.TestCase):
 
     def setUp(self):
         self.tempdir = tempfile.mkdtemp()
-    
+
     def tearDown(self):
         if os.path.exists(self.tempdir):
             shutil.rmtree(self.tempdir, ignore_errors=True)

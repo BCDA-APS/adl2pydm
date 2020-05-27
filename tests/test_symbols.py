@@ -24,12 +24,12 @@ from adl2pydm import symbols
 class Test_Module(unittest.TestCase):
 
     # def setUp(self): ...
-    
+
     # def tearDown(self): ...
-    
+
     def test_symbols(self):
         self.assertEqual(len(symbols.adl_widgets), 24)
-        
+
         self.assertIsInstance(symbols.adl_widgets, dict)
         for k, w in symbols.adl_widgets.items():
             self.assertIsInstance(w, dict)

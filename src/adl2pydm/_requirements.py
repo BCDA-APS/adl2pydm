@@ -12,8 +12,8 @@
 
 def learn_requirements():
     """
-    list all installation requirements 
-    
+    list all installation requirements
+
     ALL packages & version restrictions stated in requirements.txt
     """
     req_file = 'requirements.txt'

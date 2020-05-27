@@ -4,10 +4,10 @@
 > CONDA_DEFAULT_ENV=pydm-only
 9,10c9,10
 < CONDA_PREFIX=/home/mintadmin/Apps/anaconda/envs/bluesky
-< CONDA_PROMPT_MODIFIER=(bluesky) 
+< CONDA_PROMPT_MODIFIER=(bluesky)
 ---
 > CONDA_PREFIX=/home/mintadmin/Apps/anaconda/envs/pydm-only
-> CONDA_PROMPT_MODIFIER=(pydm-only) 
+> CONDA_PROMPT_MODIFIER=(pydm-only)
 18d17
 < EPICS_BASE=/home/mintadmin/Apps/anaconda/envs/bluesky/epics
 23d21

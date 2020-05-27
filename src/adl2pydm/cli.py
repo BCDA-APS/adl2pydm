@@ -3,7 +3,7 @@
 """
 convert MEDM .adl screen file(s) to PyDM .ui format
 
-Only rely on packages in this project or from the standard Python distribution. 
+Only rely on packages in this project or from the standard Python distribution.
 """
 
 import argparse
@@ -24,7 +24,7 @@ def processFile(adl_filename, output_path=None):
     screen = adl_parser.MedmMainWidget(adl_filename)
     buf = screen.getAdlLines(adl_filename)
     screen.parseAdlBuffer(buf)
-    
+
     writer = output_handler.Widget2Pydm()
     writer.write_ui(screen, output_path)
 
@@ -39,8 +39,8 @@ def get_user_parameters():
 
     msg = "MEDM '.adl' file(s) to convert"
     parser.add_argument(
-        'adlfiles', 
-        action='store', 
+        'adlfiles',
+        action='store',
         nargs=argparse.ONE_OR_MORE,
         help=msg,
         )
@@ -48,22 +48,22 @@ def get_user_parameters():
     msg =  "output directory"
     msg += ", default: same directory as input file"
     parser.add_argument(
-        '-d', 
+        '-d',
         '--dir',
-        action='store', 
-        dest='dir', 
-        help=msg, 
+        action='store',
+        dest='dir',
+        help=msg,
         default=None)
 
     parser.add_argument(
-        '-v', 
-        '--version', 
-        action='version', 
+        '-v',
+        '--version',
+        action='version',
         version=adl2pydm.__version__)
 
     parser.add_argument(
-        "-log", 
-        "--log", 
+        "-log",
+        "--log",
         default="warning",
         help=(
             "Provide logging level. "
@@ -71,7 +71,7 @@ def get_user_parameters():
         )
 
     parser.add_argument(
-        "--use-scatterplot", 
+        "--use-scatterplot",
         action="store_true",
         default=False,
         help=(

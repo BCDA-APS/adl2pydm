@@ -32,7 +32,7 @@ class TestSuite(unittest.TestCase):
 
         with open(path, "r") as f:
             buf = f.read()
-        
+
         self.test_calcs = json.loads(buf)
 
     # ----------------------------------------------------------

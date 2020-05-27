@@ -22,7 +22,7 @@ class Test_Something(unittest.TestCase):
 
     def tearDown(self):
         pass
-    
+
     def test_the_package_name(self):
         self.assertEqual(adl2pydm.__project__, u'adl2pydm')
 

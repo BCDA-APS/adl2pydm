@@ -99,7 +99,7 @@
     		clr=2
     	}
     }
-    
+
 		text {
 			object {
 				x=0
@@ -126,7 +126,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -151,7 +151,7 @@
     	textix="  Info"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -199,7 +199,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -247,7 +247,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -295,7 +295,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -341,7 +341,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -389,7 +389,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -421,7 +421,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -453,7 +453,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -485,7 +485,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -517,7 +517,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -549,7 +549,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -608,7 +608,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -633,7 +633,7 @@
     	textix="  DeviceStatus"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -679,7 +679,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -740,7 +740,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -765,7 +765,7 @@
     	textix="  GigE"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -813,7 +813,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -859,7 +859,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -907,7 +907,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -953,7 +953,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1001,7 +1001,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1049,7 +1049,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1108,7 +1108,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=10
@@ -1133,7 +1133,7 @@
     	textix="  StreamHold"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1179,7 +1179,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1240,7 +1240,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1265,7 +1265,7 @@
     	textix="  Timestamp"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1313,7 +1313,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1344,7 +1344,7 @@
     	label="GevTimestampControlLatch"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1375,7 +1375,7 @@
     	label="GevTimestampControlReset"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1436,7 +1436,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1461,7 +1461,7 @@
     	textix="  PTP"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1507,7 +1507,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1553,7 +1553,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1614,7 +1614,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -1639,7 +1639,7 @@
     	textix="  Acquisition"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1670,7 +1670,7 @@
     	label="AcquisitionStart"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1701,7 +1701,7 @@
     	label="AcquisitionStop"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1732,7 +1732,7 @@
     	label="AcquisitionAbort"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1778,7 +1778,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1826,7 +1826,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1874,7 +1874,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1922,7 +1922,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -1983,7 +1983,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=495
@@ -2008,7 +2008,7 @@
     	textix="  Trigger"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2054,7 +2054,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2100,7 +2100,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2131,7 +2131,7 @@
     	label="TriggerSoftware"
     	press_msg="1"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2177,7 +2177,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2223,7 +2223,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2269,7 +2269,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2330,7 +2330,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -2355,7 +2355,7 @@
     	textix="  ImageMode"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2403,7 +2403,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2451,7 +2451,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2499,7 +2499,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2547,7 +2547,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2595,7 +2595,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2656,7 +2656,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -2681,7 +2681,7 @@
     	textix="  ImageFormat"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2729,7 +2729,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2777,7 +2777,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2823,7 +2823,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2871,7 +2871,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2919,7 +2919,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -2967,7 +2967,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3015,7 +3015,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3076,7 +3076,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -3101,7 +3101,7 @@
     	textix="  Controls"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3149,7 +3149,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3197,7 +3197,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3258,7 +3258,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -3283,7 +3283,7 @@
     	textix="  DSPSubregion"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3331,7 +3331,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3379,7 +3379,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3427,7 +3427,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3488,7 +3488,7 @@
     		fill="outline"
     	}
     }
-    
+
     rectangle {
     	object {
     		x=980
@@ -3513,7 +3513,7 @@
     	textix="  Exposure"
     	align="horiz. centered"
     }
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3559,7 +3559,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3607,7 +3607,7 @@
 			limits {
 			}
 		}
-    
+
 # (Static Text)
 		text {
 			object {
@@ -3653,4 +3653,3 @@
 			limits {
 			}
 		}
-    
