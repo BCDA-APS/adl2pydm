@@ -9,6 +9,7 @@
 dist: bionic   # required for python >= 3.8
 language: python
 python:
+  - "2.7"
   - "3.6"
   - "3.7"
   - "3.8"
